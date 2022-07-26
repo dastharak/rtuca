@@ -1,0 +1,15 @@
+description = 'rtuc-conv'
+
+jar {
+    manifest {
+        attributes(
+               'Main-Class': 'ConfigureRTC'
+        )
+    }
+}
+
+task runApp(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "ConfigureRTC"
+}
