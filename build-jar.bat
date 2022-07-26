@@ -1,3 +1,5 @@
 REM javac -encoding UTF8  ClipboardUpdater.java
 
-jar cvfm rtuc-t2.jar manifest.mf *.class
+REM jar cvfm rtuc-t2.jar manifest.mf build\**.class
+
+echo Use gradle to build the project!

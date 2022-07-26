@@ -13,6 +13,7 @@ public class ConfigureRTC extends javax.swing.JFrame {
     static ClipboardUpdater clipboardUpdater;
     static Thread updaterthread;
     static ConfigureRTC uiInstance;
+    
             
     static void setClipboard(ClipboardUpdater clipboardUpdater) {
         ConfigureRTC.clipboardUpdater = clipboardUpdater;
@@ -40,6 +41,7 @@ public class ConfigureRTC extends javax.swing.JFrame {
         jCheckBoxT1Enable = new javax.swing.JCheckBox();
         jCheckBoxT2Enable = new javax.swing.JCheckBox();
         jCheckBoxRoman2Pali = new javax.swing.JCheckBox();
+        jToggleBtnRestoreLast = new javax.swing.JToggleButton();
         jButtonEndService = new javax.swing.JButton();
         jButtonStartService = new javax.swing.JButton();
         jLabelStatusOfUpdater = new javax.swing.JLabel();
@@ -47,16 +49,17 @@ public class ConfigureRTC extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Realtime Text Converter");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("RT Unicode Converter App");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(121, 121, 121)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,7 +83,17 @@ public class ConfigureRTC extends javax.swing.JFrame {
         jCheckBoxRoman2Pali.setText("Roman Pali Conveter");
         jCheckBoxRoman2Pali.setEnabled(false);
 
+        jToggleBtnRestoreLast.setSelected(true);
+        jToggleBtnRestoreLast.setText("Restore Last Text");
+        jToggleBtnRestoreLast.setToolTipText("Restores the last text when ending the service(enable by default)");
+        jToggleBtnRestoreLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleBtnRestoreLastActionPerformed(evt);
+            }
+        });
+
         jButtonEndService.setText("End Service");
+        jButtonEndService.setToolTipText("End converting the text automatically");
         jButtonEndService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEndServiceActionPerformed(evt);
@@ -88,6 +101,7 @@ public class ConfigureRTC extends javax.swing.JFrame {
         });
 
         jButtonStartService.setText("Start Service");
+        jButtonStartService.setToolTipText("Start converting text in clipboard");
         jButtonStartService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonStartServiceActionPerformed(evt);
@@ -101,12 +115,6 @@ public class ConfigureRTC extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jButtonStartService)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonEndService)
-                .addContainerGap(121, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -115,6 +123,17 @@ public class ConfigureRTC extends javax.swing.JFrame {
                     .addComponent(jCheckBoxRoman2Pali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelStatusOfUpdater, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(155, 155, 155))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jButtonStartService)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonEndService))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jToggleBtnRestoreLast)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +144,9 @@ public class ConfigureRTC extends javax.swing.JFrame {
                 .addComponent(jCheckBoxT2Enable)
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBoxRoman2Pali)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jToggleBtnRestoreLast)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelStatusOfUpdater)
                 .addGap(35, 35, 35)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -171,6 +192,14 @@ public class ConfigureRTC extends javax.swing.JFrame {
         jLabelStatusOfUpdater.setText("Stopped");
         
     }//GEN-LAST:event_jButtonEndServiceActionPerformed
+
+    private void jToggleBtnRestoreLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtnRestoreLastActionPerformed
+       if(jToggleBtnRestoreLast.isSelected()){
+           clipboardUpdater.setEnableRestoreLastText(true);
+       }else{
+           clipboardUpdater.setEnableRestoreLastText(false);
+       }
+    }//GEN-LAST:event_jToggleBtnRestoreLastActionPerformed
 
     
     /**
@@ -234,5 +263,6 @@ public class ConfigureRTC extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelStatusOfUpdater;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JToggleButton jToggleBtnRestoreLast;
     // End of variables declaration//GEN-END:variables
 }

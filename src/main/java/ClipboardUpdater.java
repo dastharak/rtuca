@@ -15,9 +15,10 @@ class ClipboardUpdater implements Runnable {
     static ConfigureRTC rtcUI;
     static Object[] commandsAll = new Object[10];
     private static final String MAGIC_STRING = "6869746170616e";
-    static Clipboard clipboard;
+    static Clipboard clipboard = null;
     static String[] args = new String[0];
     boolean isThreadRunning = false;
+    private boolean enableRestoreLastText = true;
 
     @Override
     public void run() {
@@ -33,13 +34,13 @@ class ClipboardUpdater implements Runnable {
                     commandsAll[1] = arg.substring(5);//copy exit command
                 }
             }
-
-            clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            if(clipboard==null)
+                clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
             RTUC rtuc = new RTUC();
             rtuc.debugEnable = (Boolean) commandsAll[0];
             String inputData = "";
-            String inputDataLast = "";
+            String inputDataLast = null;// to restore last data
             String convertedData = "";
             
             while (isThreadRunning) {
@@ -69,6 +70,9 @@ class ClipboardUpdater implements Runnable {
                 } catch (Throwable t) {
                     t.printStackTrace();
                 }
+            }
+            if(enableRestoreLastText && inputDataLast !=null){
+                copyToClipboard(inputDataLast);//this will be set to null in the beginning of while
             }
             sleep_1();//wait
         }
@@ -129,6 +133,14 @@ class ClipboardUpdater implements Runnable {
             System.out.println(s);
         }
         //update the commands list 
+    }
+
+    public boolean isEnableRestoreLastText() {
+        return enableRestoreLastText;
+    }
+
+    public void setEnableRestoreLastText(boolean enableRestoreLastText) {
+        this.enableRestoreLastText = enableRestoreLastText;
     }
 
 }
