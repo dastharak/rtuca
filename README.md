@@ -9,12 +9,13 @@ All text copied to clipboard will be converted to Sinhala unicode when the servi
 *Note: Converter does not check the output is valid Sinhala words.*
 
 ## Installation
+
 Download the latest release from the binaries link and the Java runtime for your operating system from java.com.
  - [Binaries](https://github.com/dastharak/rtuca/releases)
  - [Java Runtime](https://www.java.com/en/download/manual.jsp)
 
 Install both of them. Java runtime may already be installed in your system in which case you can skip the second step.
-Execute the script 'run'
+Execute the *rtuc-con.jar* file.
 
 ## Usage
 
@@ -26,6 +27,7 @@ Start the application by running the run.bat script :
 `restore last text` is useful to restore a text you copied to clipboard without realizing the converter is enable.
 
 ## Acknowledgement
+
 **This is an independently developed & maintained software. I would like to thank the original 
 developers and University of Colombo school of Computing for allowing to use the code**
 
