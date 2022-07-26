@@ -6,11 +6,11 @@ RT Unicode Converter App is a standalone version of the Real Time Unicode Conver
 The converter's code is mainly a Java port of the original Javascript code. 
 The additional functionality is to convert the text in clipboard automatically to unicode.
 All text copied to clipboard will be converted to Sinhala unicode when the service is running.
-Note: Convert does not check the output is valid Sinhala words
+*Note: Converter does not check the output is valid Sinhala words.*
 
 ## Usage
 
-Start the application by running the rtuc-xx.bat script :
+Start the application by running the run.bat script :
 - `start service` to enable converting the clipboard text
 - `end service` to disable converting the clipboard text
 - `restore last text` to restore the last text converted to unicode
