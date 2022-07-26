@@ -12,6 +12,7 @@ All text copied to clipboard will be converted to Sinhala unicode when the servi
 Download the latest release from the binaries link and the Java runtime for your operating system from java.com.
  - [Binaries](https://github.com/dastharak/rtuca/releases)
  - [Java Runtime](https://www.java.com/en/download/manual.jsp)
+
 Install both of them. Java runtime may already be installed in your system in which case you can skip the second step.
 Execute the script 'run'
 
