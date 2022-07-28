@@ -1,15 +1,13 @@
-
-/**
- * Command Line Arguments:
- * -dbug<false/true> - debugs printed/not to system out during the conversion
- * -exit<ExitString> - An exit command, if found in clipboard, terminates the
- * program
- * @author Dasun T. Bamunuarachchi
- */
 import java.awt.*;
 import java.awt.datatransfer.*;
 import javax.swing.JOptionPane;
-
+/**
+ * Command Line Arguments:<br/>
+ * -dbug <false/true> - debugs printed/not to system out during the conversion<br/>
+ * -exit <ExitString> - An exit command, if found in clipboard, terminates the
+ * program
+ * @author Dasun T. Bamunuarachchi
+ */
 class ClipboardUpdater implements Runnable {
 
     static ConfigureRTC rtcUI;

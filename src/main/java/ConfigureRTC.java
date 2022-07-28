@@ -1,5 +1,5 @@
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -85,15 +85,15 @@ public class ConfigureRTC extends javax.swing.JFrame {
 
         jToggleBtnRestoreLast.setSelected(true);
         jToggleBtnRestoreLast.setText("Restore Last Text");
-        jToggleBtnRestoreLast.setToolTipText("Restores the last text when ending the service(enable by default)");
+        jToggleBtnRestoreLast.setToolTipText("Restores the last text when pausing the service(enable by default)");
         jToggleBtnRestoreLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleBtnRestoreLastActionPerformed(evt);
             }
         });
 
-        jButtonEndService.setText("End Service");
-        jButtonEndService.setToolTipText("End converting the text automatically");
+        jButtonEndService.setText("Pause Service");
+        jButtonEndService.setToolTipText("Pause converting the text");
         jButtonEndService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEndServiceActionPerformed(evt);
@@ -183,13 +183,13 @@ public class ConfigureRTC extends javax.swing.JFrame {
 
     private void jButtonStartServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartServiceActionPerformed
         clipboardUpdater.startThread();
-        jLabelStatusOfUpdater.setText("Running");
+        jLabelStatusOfUpdater.setText("Running...");
         
     }//GEN-LAST:event_jButtonStartServiceActionPerformed
 
     private void jButtonEndServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEndServiceActionPerformed
         clipboardUpdater.stopThread();
-        jLabelStatusOfUpdater.setText("Stopped");
+        jLabelStatusOfUpdater.setText("Waiting...");
         
     }//GEN-LAST:event_jButtonEndServiceActionPerformed
 
