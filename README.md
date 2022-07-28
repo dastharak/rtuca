@@ -21,10 +21,11 @@ Execute the *rtuc-con.jar* file.
 
 Start the application by running the run.bat script :
 - `start service` to enable converting the clipboard text
-- `end service` to disable converting the clipboard text
-- `restore last text` to restore the last text converted to unicode
+- `pause service` to disable converting the clipboard text
+- `restore last text` to restore the last latin text converted to unicode 
 
-`restore last text` is useful to restore a text you copied to clipboard without realizing the converter is enable.
+`restore last text` is useful to restore a text you copied to clipboard without realizing the converter is enable. 
+It will be restored to latin script.
 
 ## Acknowledgement
 
