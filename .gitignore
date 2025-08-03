@@ -1,3 +1,43 @@
+# Ignore Gradle project-specific cache directory
 .gradle
-.git
-build/*
+
+# Ignore Gradle build output directory
+build
+
+# === Gradle specific ===
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# === IntelliJ IDEA (if you use it later) ===
+.idea/
+*.iml
+
+# === VS Code (optional, in case you use it) ===
+.vscode/
+
+# === System files ===
+.DS_Store        # macOS
+Thumbs.db        # Windows
+*.swp            # Vim/vi temp files
+*~
+
+# === Logs and temp files ===
+*.log
+*.class
+*.tmp
+
+# === Java compiled class files ===
+*.class
+
+# === Jar or compiled outputs ===
+*.jar
+*.war
+*.ear
+
+# === Environment-specific config ===
+.env
+*.local
+*.key
+*.pem
