@@ -41,9 +41,9 @@ Roman-Pali-Symbols
 
 
  */
-public class RTUC{
+public class RTUC_T2{
 
-	public RTUC(){
+	public RTUC_T2(){
 		init();
 	}
 
@@ -249,7 +249,7 @@ String processTextES() {
 }
 
 	public static void main(String[] args){
-		RTUC rtuc = new RTUC();
+		RTUC_T2 rtuc = new RTUC_T2();
 		String concat = "";
 		for(String s : args){
 			concat+=s+" ";

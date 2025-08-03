@@ -6,10 +6,14 @@ build
 
 # === Gradle specific ===
 .gradle/
+.gradle/**
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
-
+gradlew
+gradlew.bat
+gradle/
+gradle/**
 # === IntelliJ IDEA (if you use it later) ===
 .idea/
 *.iml

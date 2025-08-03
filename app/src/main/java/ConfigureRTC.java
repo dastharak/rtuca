@@ -68,17 +68,24 @@ public class ConfigureRTC extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
+
+        jCheckBoxT1Enable.setSelected(true);
         jCheckBoxT1Enable.setText("Unicode Conveter T1");
-        jCheckBoxT1Enable.setEnabled(false);
+        jCheckBoxT1Enable.setEnabled(true);
         jCheckBoxT1Enable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxT1EnableActionPerformed(evt);
             }
         });
 
-        jCheckBoxT2Enable.setSelected(true);
         jCheckBoxT2Enable.setText("Unicode Conveter T2");
         jCheckBoxT2Enable.setEnabled(false);
+        jCheckBoxT2Enable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxT2EnableActionPerformed(evt);
+            }
+        });
+
 
         jCheckBoxRoman2Pali.setText("Roman Pali Conveter");
         jCheckBoxRoman2Pali.setEnabled(false);
@@ -180,6 +187,11 @@ public class ConfigureRTC extends javax.swing.JFrame {
     private void jCheckBoxT1EnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxT1EnableActionPerformed
         
     }//GEN-LAST:event_jCheckBoxT1EnableActionPerformed
+
+    private void jCheckBoxT2EnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxT1EnableActionPerformed
+        
+    }//GEN-LAST:event_jCheckBoxT1EnableActionPerformed
+
 
     private void jButtonStartServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartServiceActionPerformed
         clipboardUpdater.startThread();

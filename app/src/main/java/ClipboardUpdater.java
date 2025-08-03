@@ -37,8 +37,9 @@ class ClipboardUpdater implements Runnable {
             if(clipboard==null)
                 clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
-            RTUC rtuc = new RTUC();
-            rtuc.debugEnable = (Boolean) commandsAll[0];
+            RTUC_T1 rtuc1 = new RTUC_T1();
+            RTUC_T2 rtuc2 = new RTUC_T2();
+            rtuc1.debugEnable = (Boolean) commandsAll[0];
             String inputData = "";
             String inputDataLast = null;// to restore last data
             String convertedData = "";
@@ -61,8 +62,8 @@ class ClipboardUpdater implements Runnable {
                         continue;
                     }
                     inputDataLast = inputData;
-                    rtuc.setStringToConvert(inputData);
-                    convertedData = rtuc.processText();
+                    rtuc1.setStringToConvert(inputData);
+                    convertedData = rtuc1.processText();
 
                     copyToClipboard(convertedData);
                     System.out.println(System.currentTimeMillis() + " Clipboard OUT: " + convertedData);
