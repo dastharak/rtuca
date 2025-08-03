@@ -8,6 +8,11 @@ The additional functionality is to convert the text in clipboard automatically t
 All text copied to clipboard will be converted to Sinhala unicode when the service is running.
 *Note: Converter does not check the output is valid Sinhala words.*
 
+
+## Building and Running with Gradle
+gradle jar
+java -jar .\app\<jar_file_path>\app.jar
+
 ## Installation
 
 Download the latest release from the binaries link and the Java runtime for your operating system from java.com.
@@ -16,6 +21,7 @@ Download the latest release from the binaries link and the Java runtime for your
 
 Install both of them. Java runtime may already be installed in your system in which case you can skip the second step.
 Execute the *rtuc-con.jar* file.
+
 
 ## Usage
 
