@@ -1,1 +1,1 @@
-java -jar rtuc-conv.jar
+java -jar app\build\libs\app.jar

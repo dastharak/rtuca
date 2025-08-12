@@ -34,9 +34,11 @@ class ClipboardUpdater implements Runnable {
                     commandsAll[1] = arg.substring(5);//copy exit command
                 }
             }
-            if(clipboard==null)
+            if(clipboard==null){
                 clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
+                System.out.println("Obtaining Clipboard");
+            }
+                
             RTUC_T1 rtuc1 = new RTUC_T1();
             RTUC_T2 rtuc2 = new RTUC_T2();
             rtuc1.debugEnable = (Boolean) commandsAll[0];
@@ -121,7 +123,7 @@ class ClipboardUpdater implements Runnable {
 
     static void sleep_1() {
         try {
-            Thread.sleep(500);
+            Thread.sleep(250);
         } catch (Throwable t) {
         }
     }
